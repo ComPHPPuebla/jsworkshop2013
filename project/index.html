@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Movie JS</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/sticky.css">
+</head>
+<body>
+    <div id="wrap">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Movie JS</a>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="movie.html">Movies</a></li>
+                <li><a href="artist.html">Artists</a></li>
+                <li><a href="category.html">Categories</a></li>
+              </ul>
+              <form class="navbar-form navbar-right">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" id="title" value="title" name="filter" checked> Title
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" id="artist" value="artist" name="filter"> Artist
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" id="genre" value="genre" name="filter"> Genre
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="title-search">Search</label>
+                        <input type="text" class="form-control" id="title-search" placeholder="Search Movies">
+                  </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-search"></span>
+                        Search
+                    </button>
+                </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <header class="page-header">
+                        <h1>Welcome to Movie JS</h1>
+                    </header>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="well">
+                                <h2>
+                                    <span class="glyphicon glyphicon-film"></span>
+                                    The Hunger Games
+                                </h2>
+                                <h3>
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                    Synopsys
+                                </h3>
+                                <p>
+                                    The Hunger Games saga continues in this sequel that finds a
+                                    revolution brewing as Katniss Everdeen (Jennifer Lawrence) and
+                                    Peeta Mellark (Josh Hutcherson) take a "Victor's Tour" of the
+                                    districts, and President Snow (Donald Sutherland) plots their
+                                    downfall during preparations for the Quarter Quell, which only
+                                    occurs every 25 years in celebration of the Capitol's victory
+                                    over the districts.
+                                </p>
+                                <h4>
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    Cast
+                                </h4>
+                                <ul>
+                                    <li><a href="#">Jennifer Lawrence</a></li>
+                                    <li><a href="#">Josh Hutcherson</a></li>
+                                    <li><a href="#">Donald Sutherland</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="well">
+                                <h2>
+                                    <span class="glyphicon glyphicon-film"></span>
+                                    Thor: The Dark World
+                                </h2>
+                                <h3>
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                    Synopsys
+                                </h3>
+                                <p>
+                                    Thor (Chris Hemsworth) returns to do battle with Malekith
+                                    (Christopher Eccleston), the vengeful leader of a primordial
+                                    race that seeks to destroy the Nine Realms, in this big-budget
+                                    comic-book adventure set after the events of Marvel's The
+                                    Avengers. With even Odin (Anthony Hopkins) unable to protect
+                                    Asgard from the approaching darkness, the god of thunder
+                                    reunites with Jane Foster (Natalie Portman) and prepares to
+                                    make the ultimate sacrifice in order to save the world from
+                                    certain destruction.
+                                </p>
+                                <h4>
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    Cast
+                                </h4>
+                                <ul>
+                                    <li><a href="#">Chris Hemsworth</a></li>
+                                    <li><a href="#">Christopher Eccleston</a></li>
+                                    <li><a href="#">Anthony Hopkins</a></li>
+                                    <li><a href="#">Natalie Portman</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <aside class="col-md-4 categories">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <span class="glyphicon glyphicon-list"></span>
+                                Categories
+                            </h3>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item active">
+                                <a href="#">Adventure</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#">Cartoon</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#">Comedy</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#">Documentary</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#">Horror</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+      <div class="container">
+        <p class="text-muted credit">Comunidad PHP Puebla</p>
+      </div>
+    </footer>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <script src="scripts/library.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Movie JS</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/sticky.css">
+</head>
+<body>
+    <div id="wrap">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Movie JS</a>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="#">Movies</a></li>
+                <li><a href="artist.html">Artists</a></li>
+                <li><a href="category.html">Categories</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <header class="page-header">
+                        <h1>Movies</h1>
+                    </header>
+                    <div class="row">
+                        <div class="col-md-12">
+                             <table class="table table-striped table-bordered table-hover">
+                                <thead>
+                                  <tr>
+                                      <th>Title</th>
+                                      <th>Category</th>
+                                      <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            The Hunger Games
+                                        </td>
+                                        <td>Adventure</td>
+                                        <td><a href="#">Edit</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Thor: The Dark World
+                                        </td>
+                                        <td>Adventure</td>
+                                        <td><a href="#">Edit</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <aside class="col-md-5 categories">
+                    <h2>Movie</h2>
+                    <form>
+                        <div class="form-group">
+                          <label for="name">Title</label>
+                          <input type="text" class="form-control" id="name" placeholder="Enter the movie title">
+                        </div>
+                        <div class="form-group">
+                          <label for="artist">Synopsys</label>
+                          <textarea class="form-control" id="artist">
+                          </textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="category">Category</label>
+                          <select class="form-control" id="category">
+                            <option value="1">Adventure</option>
+                            <option value="2">Cartoon</option>
+                          </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                           <span class="glyphicon glyphicon-plus"></span>
+                           New
+                        </button>
+                        <button type="submit" class="btn btn-success">
+                           <span class="glyphicon glyphicon-floppy-saved"></span>
+                           Save
+                        </button>
+                        <button type="submit" class="btn btn-danger">
+                           <span class="glyphicon glyphicon-trash"></span>
+                           Delete
+                        </button>
+                    </form>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+      <div class="container">
+        <p class="text-muted credit">Comunidad PHP Puebla</p>
+      </div>
+    </footer>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <script src="scripts/library.js"></script>
+</body>
+</html>
