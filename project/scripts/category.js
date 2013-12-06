@@ -40,15 +40,14 @@
     var categoryNewButton = document.getElementById('categoryNew');
     newCategoryClick = new Event();
     newCategoryClick.on('click', categoryNewButton, function(e) {
-        var request = new Request();
-        var name, shortDescription,queryString;
+        var request, form, queryString;
         
         e.preventDefault();
         
-        name = document.getElementById('name').value;
-        shortDescription = document.getElementById('short-description').innerHtml;
-        queryString = '?name=' + name + '&short_description=' + shortDescription;
-                
+        form = new Form();
+        queryString = form.serialize(document.getElementById('category-form'));
+
+        request = new Request();
         request.sendJsonp(
             'http://admin.comunidadphppuebla.com/api/categories/save' + queryString, 
             function(response) {

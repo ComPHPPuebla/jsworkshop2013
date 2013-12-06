@@ -87,3 +87,63 @@ var Request = function() {
         xhr.send('');
     };
 };
+
+var Form = function() {
+    this.serialize = function(form) {
+        var queryString = '';
+        var i, j, q = [];
+
+        if (!form || form.nodeName !== "FORM") {
+            return;
+        }
+
+        for (i = form.elements.length - 1; i >= 0; i = i - 1) {
+            var element = form.elements[i];
+
+            if (element.name === "") {
+                continue;
+            }
+
+            switch (element.nodeName) {
+                case 'INPUT':
+                    switch (element.type) {
+                        case 'text':
+                        case 'hidden':
+                        case 'password':
+                            q.push(element.name + "=" + encodeURIComponent(element.value));
+                            break;
+                        case 'checkbox':
+                        case 'radio':
+                            if (element.checked) {
+                                q.push(element.name + "=" + encodeURIComponent(element.value));
+                            }
+                            break;
+                    }
+                    break;
+                case 'TEXTAREA':
+                    q.push(element.name + "=" + encodeURIComponent(element.value));
+                    break;
+                case 'SELECT':
+                    switch (element.type) {
+                        case 'select-one':
+                            q.push(element.name + "=" + encodeURIComponent(element.value));
+                            break;
+                        case 'select-multiple':
+                            for (j = element.options.length - 1; j >= 0; j = j - 1) {
+                                if (element.options[j].selected) {
+                                    q.push(element.name + "=" + encodeURIComponent(element.options[j].value));
+                                }
+                            }
+                            break;
+                    }
+                    break;
+            }
+        }
+
+        if (q.length > 0) {
+            queryString = '?' + q.join('&');
+        }
+
+        return queryString;
+    };
+};
