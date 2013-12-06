@@ -36,4 +36,29 @@
             document.getElementById('categorySave').style.display="inline";
         });
     }
+
+    var categoryNewButton = document.getElementById('categoryNew');
+    newCategoryClick = new Event();
+    newCategoryClick.on('click', categoryNewButton, function(e) {
+        var request = new Request();
+        var name, shortDescription,queryString;
+        
+        e.preventDefault();
+        
+        name = document.getElementById('name').value;
+        shortDescription = document.getElementById('short-description').innerHtml;
+        queryString = '?name=' + name + '&short_description=' + shortDescription;
+                
+        request.sendJsonp(
+            'http://admin.comunidadphppuebla.com/api/categories/save' + queryString, 
+            function(response) {
+                alert('Acabas de insertar una categoría con id= ' + response.category_id);
+                console.log(category);
+            }
+        );
+        
+    });
+    
 })();
+
+//(function(name) {alert(name);})('Luis');

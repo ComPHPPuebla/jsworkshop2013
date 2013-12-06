@@ -24,17 +24,14 @@ var Event = function() {
      };
 };
 
-/**
- * @param Object options
- *  method: GET or POST
- *  url: Target URL
- *  asynchronous: Wether the call is asynchronous or not
- *  success: Callback to be executed when the Ajax request succeeds
- *  error: Callback to be executed when the Ajax request fails
- */
 var Request = function() {
     var unique = 0;
 
+    /**
+     * @param string url
+     * @param function callback
+     * @param object context Defaults to window
+     */
     this.sendJsonp  = function(url, callback, context) {
         var name = "_jsonp_" + unique++;
         var script = document.createElement('script');
@@ -58,6 +55,15 @@ var Request = function() {
         document.getElementsByTagName('head')[0].appendChild(script);
     };
 
+    /**
+     * @param Object options {
+     *      method: GET or POST
+     *      url: Target URL
+     *      asynchronous: Wether the call is asynchronous or not
+     *      success: Callback to be executed when the Ajax request succeeds
+     *      error: Callback to be executed when the Ajax request fails
+     *  }
+     */
     this.send = function(options) {
         var xhr = new XMLHttpRequest();
 
