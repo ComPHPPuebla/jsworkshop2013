@@ -147,3 +147,46 @@ var Form = function() {
         return queryString;
     };
 };
+
+var Element = function(element) {
+    this.click = function (callback) {
+        var click = new Event();
+
+        click.on('click', element, callback);
+    };
+
+    this.hide = function() {
+        element.style.display = 'none';
+    };
+
+    this.value = function(value) {
+        element.value = value;
+    };
+
+    this.html = function(html) {
+        element.innerHTML = html;
+    };
+
+    this.appendHtml = function(html) {
+        element.innerHTML += html;
+    };
+};
+
+var ElementCollection = function(elements) {
+    this.click = function(callback) {
+        [].forEach.call(elements, function(node) {
+            var element = new Element(node);
+
+            element.click(callback);
+        });
+    };
+};
+
+var Query = function() {
+    this.findOne = function(selector) {
+        return new Element(document.querySelector(selector));
+    };
+    this.findAll = function(selector) {
+        return new ElementCollection(document.querySelectorAll(selector));
+    };
+};
