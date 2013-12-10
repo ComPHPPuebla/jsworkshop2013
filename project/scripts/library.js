@@ -93,14 +93,14 @@ var Form = function() {
         var queryString = '';
         var i, j, q = [];
 
-        if (!form || form.nodeName !== "FORM") {
+        if (!form || form.nodeName !== 'FORM') {
             return;
         }
 
         for (i = form.elements.length - 1; i >= 0; i = i - 1) {
             var element = form.elements[i];
 
-            if (element.name === "") {
+            if (element.name === '') {
                 continue;
             }
 
@@ -159,7 +159,15 @@ var Element = function(element) {
         element.style.display = 'none';
     };
 
+    this.show = function() {
+        element.style.display = 'inline-block';
+    };
+
     this.value = function(value) {
+        if (arguments.length === 0) {
+
+            return element.value;
+        }
         element.value = value;
     };
 
